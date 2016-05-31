@@ -1,5 +1,8 @@
 # AgeDiceRoll #
-This is a basic web app for rolling dice in D&D style games
+
+To run this app visit [this page](http://pwed.me/AgeDiceRoll).
+
+This is a basic web app for rolling dice in D&D style games.
 
 If you would like to add features please do. 
 
