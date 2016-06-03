@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="id01"></div>
+
+<script>
+    xhr = new XMLHttpRequest();
+    var url = "https://api.random.org/json-rpc/1/invoke";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(json.email + ", " + json.password)
+            document.getElementById("id01").innerHTML = xhr.responseText;
+        }
+    }
+    var data = JSON.stringify({
+        "apiKey": "5b4bb657-6c6e-4d82-ac35-2ea907f5c45e",
+        "n": "1",
+        "min": "1",
+        "max": "6"
+    });
+    var jsonOut = `{
+        "jsonrpc": "2.0",
+            "method": "generateIntegers",
+            "params": {
+        "apiKey": "5b4bb657-6c6e-4d82-ac35-2ea907f5c45e",
+                "n": 3,
+                "min": 1,
+                "max": 6,
+                "replacement": true
+    },
+        "id": 42
+    }`
+    xhr.send(jsonOut);
+
+</script>
+
+</body>
+</html>
