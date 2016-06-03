@@ -12,10 +12,10 @@
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json.email + ", " + json.password)
+            console.log(json.email + ", " + json.password);
             document.getElementById("id01").innerHTML = xhr.responseText;
         }
-    }
+    };
     var data = JSON.stringify({
         "apiKey": "5b4bb657-6c6e-4d82-ac35-2ea907f5c45e",
         "n": "1",
@@ -33,7 +33,7 @@
                 "replacement": true
     },
         "id": 42
-    }`
+    }`;
     xhr.send(jsonOut);
 
 </script>
