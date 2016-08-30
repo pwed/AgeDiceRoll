@@ -4,15 +4,14 @@ var apiKey = "5b4bb657-6c6e-4d82-ac35-2ea907f5c45e";
             var url = "https://api.random.org/json-rpc/1/invoke";
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-type", "application/json");
+            xhr.send(json);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     for (var i = 0; i < idArray.length; i++) {
                         document.getElementById(idArray[i]).innerHTML = JSON.parse(xhr.responseText).result.random.data[i];
                     }
                 }
-                ;
             };
-            xhr.send(json);
         }
 
         function formRandomRequestJson(number, max, min, method, id) {
